@@ -1,12 +1,6 @@
 import random
 import time
-import timeit
-from typing import List
-
-from matplotlib import pyplot
-
 from algos import bubble_sort
-
 import matplotlib.pyplot as plt
 
 Y = []
@@ -35,14 +29,13 @@ def main():
         X.append(size)
         arr = random_gen(size)
         Y.append(benchmark(sort_func, arr))
-    values = Y
 
-    plt.plot(X, Y, color='red')
     plt.xlabel('Number of elements ')
-    plt.ylabel('time')
-    # pyplot.xlim([0, 500])
-    # pyplot.ylim([0, 1])
+    plt.ylabel('Time')
+    plt.plot(X, Y, color='red')
     plt.show()
+    # XY = list(zip(X, Y))
+    # print(XY)
 
 
 if __name__ == "__main__":
