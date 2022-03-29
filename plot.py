@@ -25,10 +25,10 @@ def main():
     global X, Y
     sort_func = bubble_sort
 
-    for size in range(1000):
-        X.append(size)
-        arr = random_gen(size)
-        Y.append(benchmark(sort_func, arr))
+    for size in range(1500):
+        X.append(size)  # Количество элементов
+        arr = random_gen(size)  # список отсортированных рандомных значений
+        Y.append(benchmark(sort_func, arr))  # время сортировки этих значений
 
     plt.xlabel('Number of elements ')
     plt.ylabel('Time')
