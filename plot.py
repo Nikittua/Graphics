@@ -1,7 +1,8 @@
 import random
 import time
-from algos import bubble_sort
+import algos
 import matplotlib.pyplot as plt
+from multiprocessing.pool import Pool
 
 Y = []
 X = []
@@ -23,12 +24,13 @@ def benchmark(func: 'Function', arr: list) -> 'time':
 
 def main():
     global X, Y
-    sort_func = bubble_sort
+    sort_func = algos.bubble_sort
 
-    for size in range(1500):
+    for size in range(600):
         X.append(size)  # Количество элементов
         arr = random_gen(size)  # список отсортированных рандомных значений
-        Y.append(benchmark(sort_func, arr))  # время сортировки этих значений
+        k = benchmark(sort_func, arr)
+        Y.append(k)  # время сортировки этих значений
 
     plt.xlabel('Number of elements ')
     plt.ylabel('Time')
@@ -40,3 +42,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
