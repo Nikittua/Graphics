@@ -24,7 +24,7 @@ def benchmark(func: 'Function', arr: list) -> 'time':
 
 def main():
     global X, Y
-    sort_func = algos.bubble_sort
+    sort_func = algos.insertion_sort
 
     for size in range(600):
         X.append(size)  # Количество элементов
